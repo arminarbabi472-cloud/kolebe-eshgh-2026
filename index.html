@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>کلبه عشق | برای آتنا</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap');
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 20% 10%,#68213d 0,#260d20 38%,#100914 100%);color:#fff;font-family:Vazirmatn,Tahoma,sans-serif;overflow-x:hidden}
+.wrap{position:relative;z-index:2;max-width:760px;margin:auto;padding:42px 18px 70px;text-align:center}
+h1{font-size:clamp(2rem,7vw,3.5rem);margin:8px 0;color:#ffd9e7;text-shadow:0 0 22px #ff5d9a}
+.tag{color:#f4c5d6;font-size:1.05rem;margin-bottom:26px}
+.card{background:#ffffff12;border:1px solid #ffc4dc55;backdrop-filter:blur(8px);border-radius:26px;padding:28px 22px;box-shadow:0 18px 55px #0006}
+.dedication{color:#ffd1e2;font-weight:700;margin-bottom:14px}.signature{font-size:1.3rem;color:#ffb6d1;letter-spacing:2px;margin:8px}
+.poem{font-size:1.1rem;line-height:2.25;white-space:pre-line;margin:16px 0}.heart{font-size:3rem;display:inline-block;animation:pulse 1.15s infinite;color:#ff6b9f}
+button{border:0;border-radius:999px;padding:13px 24px;background:linear-gradient(135deg,#ff77a9,#c82e69);color:white;font:700 1rem Vazirmatn;cursor:pointer;box-shadow:0 8px 24px #e7357655}
+.note{font-size:.85rem;color:#e9b8cb;margin-top:14px}
+@keyframes pulse{50%{transform:scale(1.22);text-shadow:0 0 24px #ff6b9f}}
+.float{position:fixed;bottom:-40px;color:#ff8db5;opacity:.25;animation:rise linear infinite;pointer-events:none}
+@keyframes rise{to{transform:translateY(-115vh) rotate(35deg);opacity:0}}
+footer{margin-top:26px;color:#dbaabd;font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="heart">♥</div>
+  <h1>کلبه عشق</h1>
+  <div class="tag">اینجا قلبی برای یک نفر می‌تپه؛ برای آتنا... 🤍</div>
+  <main class="card">
+    <div class="dedication">(تقدیم به خانم قشنگم آتنام) ♥️</div>
+    <div class="signature">𝓐 &amp; 𝓜</div>
+    <div class="poem">دوستت دارم اندازه تمام
+ثانیه هایی که زندگی کردم
+دوستت دارم اندازه تمام
+کلماتی که باهم حرف زدیم
+دوستت دارم اندازه فاصله
+خورشید تا آخرین سیاره
+دوستت دارم اندازه تعداد
+ستاره ها تو آسمونی تمیز
+دوستت دارم اندازه همه‌ی
+بینهایت های دنیا
+دوستت دارم تا ابد :)
+یجوری عاشقت شدم که
+لابه لای رگای قلبم،
+لای ذرات تنم نفس میکشی
+شدی قسمتی از روح من
+شدی وجب به وجب وجود من
+شدی تمام من دختر قشنگم
+🥹🫀</div>
+    <div class="signature">از طرف آقای محمد اربابی</div>
+    <div>ضربان قلبمه آتنام</div>
+    <div style="margin-top:12px;color:#ffd1e2">(برای آتنا 🤍)</div>
+  </main>
+  <div style="margin-top:25px"><button id="music">♪ پخش آهنگ عاشقانه</button></div>
+  <div class="note">برای پخش موسیقی، دکمه را لمس کن. این ملودی کوتاه به‌صورت اختصاصی در مرورگر ساخته می‌شود.</div>
+  <footer>با عشق، برای همیشه 🤍</footer>
+</div>
+<script>
+for(let i=0;i<18;i++){let e=document.createElement('div');e.className='float';e.textContent=Math.random()>.5?'♥':'♡';e.style.left=Math.random()*100+'vw';e.style.animationDuration=(9+Math.random()*12)+'s';e.style.animationDelay=(-Math.random()*18)+'s';e.style.fontSize=(14+Math.random()*24)+'px';document.body.appendChild(e)}
+let ctx=null, playing=false, timer=null;
+const notes=[392,440,494,523,494,440,392,330,349,392,440,392,349,330,294,330];
+document.getElementById('music').addEventListener('click',async()=>{
+ const btn=document.getElementById('music');
+ if(playing){clearInterval(timer);playing=false;btn.textContent='♪ پخش آهنگ عاشقانه';return}
+ const AC=window.AudioContext||window.webkitAudioContext;if(!AC){btn.textContent='پخش موسیقی در این مرورگر پشتیبانی نمی‌شود';return}
+ ctx=ctx||new AC();if(ctx.state==='suspended')await ctx.resume();
+ let n=0;function play(){let now=ctx.currentTime;let osc=ctx.createOscillator(),gain=ctx.createGain();osc.type='sine';osc.frequency.value=notes[n%notes.length];gain.gain.setValueAtTime(.0001,now);gain.gain.exponentialRampToValueAtTime(.12,now+.04);gain.gain.exponentialRampToValueAtTime(.0001,now+.42);osc.connect(gain);gain.connect(ctx.destination);osc.start(now);osc.stop(now+.44);n++}
+ play();timer=setInterval(play,460);playing=true;btn.textContent='■ توقف موسیقی';
+});
+</script>
+</body>
+</html>
