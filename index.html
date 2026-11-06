@@ -6,26 +6,63 @@
 <meta name="robots" content="noindex, nofollow">
 <title>کلبه عشق | برای آتنا</title>
 <style>
+:root{--pink:#ffacd0;--soft:#ffe5f0;--wine:#2a0d20;--wine2:#54243d}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;background:linear-gradient(145deg,#fff7f8,#f6edf4);color:#513b48;font-family:Tahoma,Arial,sans-serif;display:flex;justify-content:center;align-items:center;padding:24px}
-main{width:min(100%,720px);background:#ffffffd9;border:1px solid #f1dce5;border-radius:28px;padding:30px 22px;text-align:center;box-shadow:0 12px 40px #8d53651a}
-h1{font-size:2rem;color:#a64d70;margin:4px 0 8px}
-.sub{color:#987889;margin:0 0 22px}
-.music{border:0;border-radius:999px;background:#a64d70;color:white;padding:13px 24px;font-size:1rem;cursor:pointer;margin:6px 0 24px}
-.poem{white-space:pre-line;line-height:2.15;font-size:1.08rem}
-.signature{margin-top:24px;color:#a64d70;font-weight:bold}
-.heart{font-size:1.5rem;margin-top:14px}
+html{scroll-behavior:smooth}
+body{
+ margin:0;min-height:100vh;overflow-x:hidden;color:#fff7fb;
+ font-family:Tahoma,Arial,sans-serif;text-align:center;
+ background:linear-gradient(125deg,#210a19,#54243d,#321126,#5b2944,#210a19);
+ background-size:350% 350%;animation:bgShift 18s ease-in-out infinite;
+ padding:30px 16px 55px;position:relative
+}
+@keyframes bgShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+body:before,body:after{
+ content:"";position:fixed;width:260px;height:260px;border-radius:50%;
+ filter:blur(75px);opacity:.22;pointer-events:none;z-index:0
+}
+body:before{background:#ff75b5;top:8%;left:-100px;animation:glowA 12s ease-in-out infinite alternate}
+body:after{background:#a54b82;right:-100px;bottom:4%;animation:glowB 14s ease-in-out infinite alternate}
+@keyframes glowA{to{transform:translate(70px,110px) scale(1.25);opacity:.36}}
+@keyframes glowB{to{transform:translate(-80px,-100px) scale(1.3);opacity:.34}}
+main{position:relative;z-index:1;width:min(100%,770px);margin:0 auto}
+h1{font-size:clamp(2rem,7vw,3rem);color:#ffb6d2;margin:10px 0 12px;text-shadow:0 0 22px #ff8cbd55}
+.subtitle{font-size:1.12rem;color:#f2c7da;margin:0 0 32px;line-height:1.9}
+.poem-card{
+ border:2px solid #e77cae;border-radius:42px;padding:34px 20px 40px;
+ background:linear-gradient(145deg,#602b46aa,#351326bb);
+ box-shadow:0 18px 55px #10030d55,inset 0 0 35px #ffb0d00b;
+ backdrop-filter:blur(7px);animation:cardGlow 5s ease-in-out infinite alternate
+}
+@keyframes cardGlow{from{box-shadow:0 18px 45px #10030d55,0 0 10px #ff9cc522}to{box-shadow:0 18px 55px #10030d66,0 0 28px #ff9cc544}}
+.music{border:0;border-radius:999px;background:#ffafd0;color:#42152d;font-weight:bold;font-size:1.1rem;padding:17px 34px;margin:4px 0 34px;cursor:pointer;box-shadow:0 7px 24px #ff9cc533;transition:transform .2s,box-shadow .2s}
+.music:active{transform:scale(.96)}
+.poem{white-space:pre-line;line-height:2.45;font-size:clamp(1.05rem,4vw,1.35rem);color:#fff4f9}
+.dedication{margin-top:42px;line-height:2.2;color:#ffe0ed;font-size:1.12rem}
+.footer{margin:42px 0 10px;color:#ffc1da;font-size:1.2rem}
+.status{color:#f8dce8;margin:18px 0 0;font-size:1rem;min-height:28px}
+.floaters{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.floater{position:absolute;bottom:-50px;color:#ffc0d9;opacity:0;animation:rise linear infinite;text-shadow:0 0 14px #ffacd0}
+.floater:nth-child(1){left:8%;font-size:18px;animation-duration:15s;animation-delay:0s}
+.floater:nth-child(2){left:24%;font-size:13px;animation-duration:19s;animation-delay:4s}
+.floater:nth-child(3){left:48%;font-size:22px;animation-duration:17s;animation-delay:2s}
+.floater:nth-child(4){left:69%;font-size:15px;animation-duration:21s;animation-delay:7s}
+.floater:nth-child(5){left:88%;font-size:20px;animation-duration:16s;animation-delay:5s}
+@keyframes rise{0%{transform:translateY(0) rotate(0);opacity:0}12%{opacity:.5}85%{opacity:.35}100%{transform:translateY(-115vh) rotate(35deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
+<div class="floaters" aria-hidden="true">
+ <span class="floater">♡</span><span class="floater">✦</span><span class="floater">🤍</span><span class="floater">♡</span><span class="floater">✧</span>
+</div>
 <main>
-<h1>کلبه عشق 🤍</h1>
-<p class="sub">اینجا قلبی برای یک نفر می‌تپه؛ برای آتنا...</p>
-<button class="music" id="musicBtn" type="button">▶ پخش آهنگ</button>
-<audio id="song" preload="metadata">
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-<div class="poem">(تقدیم به خانم قشنگم آتنام) ♥️
+ <h1>کلبه عشق 🤍</h1>
+ <p class="subtitle">اینجا قلبی برای یک نفر می‌تپه؛ برای آتنا...</p>
+ <section class="poem-card">
+  <button class="music" id="musicBtn" type="button">▶ پخش آهنگ</button>
+  <audio id="song" preload="metadata"><source src="music.mp3" type="audio/mpeg"></audio>
+  <div class="poem">(تقدیم به خانم قشنگم آتنام) ♥️
 𝓐 &amp; 𝓜
 
 دوستت دارم اندازه تمام
@@ -47,22 +84,22 @@ h1{font-size:2rem;color:#a64d70;margin:4px 0 8px}
 شدی وجب به وجب وجود من
 شدی تمام من دختر قشنگم
 🥹🫀</div>
-<div class="signature">از طرف آقای محمد اربابی<br>ضربان قلبمه آتنام</div>
-<div class="heart">برای آتنا 🤍</div>
+  <div class="dedication">از طرف آقای محمد اربابی<br>ضربان قلبمه آتنام<br>(برای آتنا 🤍)</div>
+ </section>
+ <div class="footer">با تمام قلبم، برای تو آتنا 🤍</div>
+ <p class="status" id="status">یک آهنگ برای تو، با عشق 🤍</p>
 </main>
 <script>
-const audio = document.getElementById('song');
-const btn = document.getElementById('musicBtn');
-btn.addEventListener('click', async () => {
-  if (audio.paused) {
-    try { await audio.play(); btn.textContent = '❚❚ توقف آهنگ'; }
-    catch (e) { btn.textContent = 'پخش نشد؛ دوباره بزن'; }
-  } else {
-    audio.pause(); btn.textContent = '▶ پخش آهنگ';
-  }
+const audio=document.getElementById('song');
+const btn=document.getElementById('musicBtn');
+const status=document.getElementById('status');
+btn.addEventListener('click',async()=>{
+ if(audio.paused){
+  try{await audio.play();btn.textContent='Ⅱ توقف موسیقی';status.textContent='موسیقی در حال پخش است 🤍';}
+  catch(e){status.textContent='پخش انجام نشد؛ دوباره دکمه را لمس کن.';}
+ }else{audio.pause();btn.textContent='▶ پخش آهنگ';status.textContent='موسیقی متوقف شد 🤍';}
 });
-audio.addEventListener('ended', () => btn.textContent = '▶ پخش دوباره آهنگ');
-audio.addEventListener('pause', () => { if (audio.ended || audio.currentTime === 0) btn.textContent = '▶ پخش آهنگ'; });
+audio.addEventListener('ended',()=>{btn.textContent='▶ پخش دوباره آهنگ';status.textContent='برای تو، با عشق آتنا 🤍';});
 </script>
 </body>
 </html>
