@@ -38,6 +38,11 @@ h1{font-size:clamp(2rem,7vw,3rem);color:#ffb6d2;margin:10px 0 12px;text-shadow:0
 .music{border:0;border-radius:999px;background:#ffafd0;color:#42152d;font-weight:bold;font-size:1.1rem;padding:17px 34px;margin:4px 0 34px;cursor:pointer;box-shadow:0 7px 24px #ff9cc533;transition:transform .2s,box-shadow .2s}
 .music:active{transform:scale(.96)}
 .poem{white-space:pre-line;line-height:2.45;font-size:clamp(1.05rem,4vw,1.35rem);color:#fff4f9}
+.couple-heart{display:block;white-space:normal;font-size:2.8rem;line-height:1.2;margin:18px auto 18px;color:#ff6b9f;filter:drop-shadow(0 0 10px #ff7eae88);animation:heartbeat 1.15s ease-in-out infinite;transform-origin:center}
+.love-phrase{font-size:clamp(1.2rem,5vw,1.65rem);font-weight:bold;color:#ffb5d2;line-height:1.9;margin:0 auto 12px;text-shadow:0 0 16px #ff85b877;animation:phraseGlow 2.4s ease-in-out infinite alternate}
+.heart-note{max-width:560px;margin:0 auto 38px;color:#ffe1ed;font-size:clamp(1rem,3.8vw,1.2rem);line-height:2.15;text-shadow:0 0 12px #ff9dc533}
+@keyframes phraseGlow{from{opacity:.82;text-shadow:0 0 8px #ff85b855}to{opacity:1;text-shadow:0 0 22px #ff85b8}}
+@keyframes heartbeat{0%,100%{transform:scale(1)}14%{transform:scale(1.22)}28%{transform:scale(1)}42%{transform:scale(1.16)}58%{transform:scale(1)}}
 .dedication{margin-top:42px;line-height:2.2;color:#ffe0ed;font-size:1.12rem}
 .footer{margin:42px 0 10px;color:#ffc1da;font-size:1.2rem}
 .status{color:#f8dce8;margin:18px 0 0;font-size:1rem;min-height:28px}
@@ -64,6 +69,9 @@ h1{font-size:clamp(2rem,7vw,3rem);color:#ffb6d2;margin:10px 0 12px;text-shadow:0
   <audio id="song" preload="metadata"><source src="music.mp3" type="audio/mpeg"></audio>
   <div class="poem">(تقدیم به خانم قشنگم آتنام) ♥️
 𝓐 &amp; 𝓜
+<div class="couple-heart" aria-label="قلب عاشقانه">♥️</div>
+<div class="love-phrase">رواااااانیتم دختررررر</div>
+<div class="heart-note">اون قلب بالا، قلب منه که ضربانش وصله به تو؛<br>نگاش کن قشنگم، بدون تو نمی‌زنه. 🤍</div>
 
 دوستت دارم اندازه تمام
 ثانیه هایی که زندگی کردم
